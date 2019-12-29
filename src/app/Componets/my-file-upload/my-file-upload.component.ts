@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {NzMessageService} from 'ng-zorro-antd/message';
-import {NzUploadComponent,UploadChangeParam,UploadFile} from 'ng-zorro-antd/upload';
+import {NzUploadComponent,UploadChangeParam,UploadFile, UploadXHRArgs} from 'ng-zorro-antd/upload';
 import {HttpClient,HttpResponse,HttpRequest} from '@angular/common/http';
 import {filter} from 'rxjs/operators';
 import {NzModalComponent,NzModalService} from 'ng-zorro-antd';
@@ -35,7 +35,9 @@ export class MyFileUploadComponent implements OnInit {
   beforeUpload=(file:UploadFile):boolean=>{
     debugger;
     this.fileList=this.fileList.concat(file);
-    return false;
+    //false手动上传，true自动上传
+    //return false;
+    return true;
   }
   handleUpload():void{
     const formData=new FormData();
@@ -55,6 +57,18 @@ export class MyFileUploadComponent implements OnInit {
         this.msg.success('upload successfully');
       }
     )
+  }
+  // autoUpload(){
+  //   debugger;
+  //   console.log(this.fileList)
+  // }
+  autoUpload=(item:UploadXHRArgs)=>{
+    debugger;
+    const formData=new FormData();
+    this.fileList.forEach((file:any)=>{
+      formData.append('files[]',file);
+    });
+    formData.append('config', 'CRM');
   }
   //#endregion
   ngOnInit() {

@@ -1,5 +1,6 @@
 
-    <nz-upload [(nzFileList)]="fileList" [nzAccept]="'.jpg,.jpeg,.png,.bmp,.doc,.docx'"  [nzFileType]="'image/png,image/jpeg'" [nzBeforeUpload]="beforeUpload" nzMultiple [nzLimit]="5">
+    <nz-upload [(nzFileList)]="fileList" [nzAccept]="'.jpg,.jpeg,.png,.bmp,.doc,.docx'"  [nzFileType]="'image/png,image/jpeg'" 
+    [nzBeforeUpload]="beforeUpload" nzMultiple [nzLimit]="5" [nzCustomRequest]="autoUpload()">
       <button nz-button><i nz-icon nzType="upload"></i><span>Select File</span></button>
     </nz-upload>
     <button
