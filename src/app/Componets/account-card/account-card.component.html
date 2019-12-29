@@ -1,0 +1,100 @@
+<div style="min-width: 1500px;">
+  <ul nz-row nzType="flex" [nzGutter]="{ xs: 8, sm: 8, md: 8, lg: 8, xl: 8, xxl: 8 }">
+    <li nz-col nzSpan="24"  style="line-height: 20px;padding-left: 0px;">
+      <nz-card [nzTitle]="coverTemplate" [nzExtra]="extraTemplate">
+        <ng-template #coverTemplate>
+          <h4 nz-col class="h_float color_0000AA">Taiwan Semiconductor Manufacturing Company </h4>
+          <p nz-col class="h_float color_b6b6b6 font14" >
+            台湾积体电路制造股份有限公司
+          </p>&nbsp;&nbsp;
+          
+        </ng-template>
+        <div nz-card-grid [ngStyle]="gridLogo">
+          <nz-avatar nzIcon="user" [nzSize]="100" nzSrc="//www.baidu.com/img/bd_logo1.png">
+            
+          </nz-avatar>
+        </div>
+        <div nz-card-grid [ngStyle]="gridInfo">
+          <nz-descriptions [nzColumn]="2">
+            <nz-descriptions-item>
+              <h4 nz-col class="h_float color_0000AA">TSMC</h4>
+              <span class="h_float color_b6b6b6 font12" >台积电</span>
+            </nz-descriptions-item>
+            <!-- <nz-descriptions-item>
+              <h4 nz-col class="h_float">86-021-62573481 </h4>
+              <span class="h_float color_b6b6b6 font12" >86-021-62573481</span>
+            </nz-descriptions-item> -->
+            <nz-descriptions-item>            
+            </nz-descriptions-item>
+            <nz-descriptions-item>
+              <div nz-col class="h_float color_0000AA" >China</div>
+              <div nz-col class="h_float color_0000AA" >Hinschu</div>
+              <h4 nz-col class="h_float color_0000AA"> park1</h4>
+              <span class="h_float color_b6b6b6 font12" >新竹科学园区1</span>
+            </nz-descriptions-item>
+            <nz-descriptions-item >
+              <h4 nz-col class="h_float color_0000AA">Hsinchu science park, Taiwan</h4>
+              <span class="h_float color_b6b6b6 font12" >台湾新竹科学园区2</span>
+            </nz-descriptions-item>
+  
+  
+            <nz-descriptions-item >
+              <h4 nz-col class="h_float color_0000AA" >www.baidu.com</h4>
+              <span class="h_float color_b6b6b6" >www.baidu.com</span>
+            </nz-descriptions-item>
+            <nz-descriptions-item >
+              <h4 nz-col class="h_float color_0000AA">86-021-62573481 </h4>
+              <span class="h_float color_b6b6b6" >86-021-62573481</span>
+            </nz-descriptions-item>
+            <nz-descriptions-item>
+              <div nz-col class="h_float color_b6b6b6">CO#:</div>
+              <h4 nz-col class="h_float color_0000AA">TS </h4>
+            </nz-descriptions-item>
+            <nz-descriptions-item>
+              <div nz-col class="h_float color_b6b6b6">Tax Number:</div>
+              <h4 nz-col class="h_float color_0000AA">13761530518 </h4>
+              <span class="h_float color_b6b6b6 ">Taiwan: GUI Registration Number</span>
+            </nz-descriptions-item>
+          </nz-descriptions>
+        </div>
+      <div nz-card-grid [ngStyle]="gridMore">
+          <nz-descriptions [nzColumn]="4">
+            <nz-descriptions-item >
+              <div nz-col class="h_float">RelationShip</div>
+              <h4 nz-col class="h_float color_0000AA">Customer Supplier </h4>
+              <div nz-col class="h_float">Related Contacts</div>
+              <h4 nz-col class="h_float color_0000AA">25 </h4>
+            </nz-descriptions-item>
+            <nz-descriptions-item [nzSpan]="2">
+
+            </nz-descriptions-item>
+            <nz-descriptions-item>
+              <div nz-col class="h_float">Status:</div>
+              <nz-badge class="h_float"  nzStatus="processing" nzText="Normal"></nz-badge>
+            </nz-descriptions-item>
+          </nz-descriptions>
+        </div> 
+        <ng-template #extraTemplate>
+          <ul  class="MoreAndHistory">
+            <li><a>More</a></li>
+            <li><button style="color:#1890ff" 
+              nz-button 
+              nz-popover 
+              nzPopoverTitle="Accoount Version History"            
+              nzPopoverTrigger="click">
+              History
+            </button></li>
+          </ul>
+          
+        </ng-template>
+  
+         <!-- all account versions -->
+         <ng-template  #AccountVersionTemplate>
+          <div style="margin-top:1%; width:720px;">
+             History
+          </div>
+      </ng-template>     
+      </nz-card>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,231 @@
+<div nz-col nzSpan="24">
+  <!-- <nz-collapse>
+    <nz-collapse-panel *ngFor="let panel of panels" [nzHeader]="panel.name" [nzActive]="panel.active">
+      <p>{{ panel.name }}</p>
+      <div *ngIf="panel.childPanel && panel.childPanel.length > 0">
+        <nz-collapse>
+          <nz-collapse-panel
+            *ngFor="let childPanel of panel.childPanel"
+            [nzHeader]="childPanel.name"
+            [nzActive]="childPanel.active"
+          >
+            <p>
+              A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a
+              welcome guest in many households across the world.
+            </p>
+          </nz-collapse-panel>
+        </nz-collapse>
+      </div>
+    </nz-collapse-panel>  
+  </nz-collapse>
+  
+  <br> -->
+  <!-- <nz-collapse class="basic">
+    <nz-collapse-panel [nzActive]="'true'" [nzShowArrow]="'false'" [nzHeader]="'Will Review'">
+        <nz-collapse>
+          <nz-collapse-panel [nzHeader]="'credit1'">
+            <div style="padding-top: 3.2%;">
+              <nz-table [nzData]="creditAreaData" [nzFrontPagination]="false" [nzShowPagination]="false">
+                <thead>
+                  <th>Credit segment</th>
+                  <th>Credit limit</th>
+                  <th>Currency</th>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of creditAreaData">
+                    <td>{{item.CreditSegment}} </td>
+                    <td>{{item.CreditLimit}} </td>
+                    <td>{{item.CurrencyType}} </td>                   
+                  </tr>
+                </tbody>
+              </nz-table>
+            </div>
+            <nz-collapse>
+              <nz-collapse-panel [nzHeader]="'attchment'">
+                <nz-table>
+                  <thead>
+                    <th>FileName</th>
+                    <th>File extension</th>
+                    <th>uploadtime</th>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>1</td>
+                      <td>1</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>2</td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>3</td>
+                    </tr>
+                  </tbody>
+                </nz-table>
+              </nz-collapse-panel>
+            </nz-collapse>
+          </nz-collapse-panel>
+        </nz-collapse>
+        <nz-collapse>
+          <nz-collapse-panel [nzHeader]="'credit2'">
+            <div style="padding-top: 3.2%;">
+              <nz-table [nzData]="creditAreaData" [nzFrontPagination]="false" [nzShowPagination]="false">
+                <thead>
+                  <th>Credit segment</th>
+                  <th>Credit limit</th>
+                  <th>Currency</th>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of creditAreaData">
+                    <td>{{item.CreditSegment}} </td>
+                    <td>{{item.CreditLimit}} </td>
+                    <td>{{item.CurrencyType}} </td>                   
+                  </tr>
+                </tbody>
+              </nz-table>
+            </div>
+            <nz-collapse>
+              <nz-collapse-panel [nzHeader]="'attchment'">
+                <nz-table>
+                  <thead>
+                    <th>FileName</th>
+                    <th>File extension</th>
+                    <th>uploadtime</th>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>1</td>
+                      <td>1</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>2</td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>3</td>
+                    </tr>
+                  </tbody>
+                </nz-table>
+              </nz-collapse-panel>
+            </nz-collapse>
+          </nz-collapse-panel>
+        </nz-collapse>
+        <nz-collapse>
+          <nz-collapse-panel [nzHeader]="'credit3'">
+            <div style="padding-top: 3.2%;">
+              <nz-table [nzData]="creditAreaData" [nzFrontPagination]="false" [nzShowPagination]="false">
+                <thead>
+                  <th>Credit segment</th>
+                  <th>Credit limit</th>
+                  <th>Currency</th>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of creditAreaData">
+                    <td>{{item.CreditSegment}} </td>
+                    <td>{{item.CreditLimit}} </td>
+                    <td>{{item.CurrencyType}} </td>                   
+                  </tr>
+                </tbody>
+              </nz-table>
+            </div>
+            <nz-collapse>
+              <nz-collapse-panel [nzHeader]="'attchment'">
+                <nz-table>
+                  <thead>
+                    <th>FileName</th>
+                    <th>File extension</th>
+                    <th>uploadtime</th>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>1</td>
+                      <td>1</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>2</td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>3</td>
+                    </tr>
+                  </tbody>
+                </nz-table>
+              </nz-collapse-panel>
+            </nz-collapse>
+          </nz-collapse-panel>
+        </nz-collapse>              
+    </nz-collapse-panel>
+  </nz-collapse> -->
+</div>
+
+<div style="margin-top: 3%;" nz-col nzSpan="24">
+  <nz-collapse class="basic">
+    <nz-collapse-panel [nzActive]="'true'" [nzShowArrow]="'false'" [nzHeader]="'Will Review'">
+      <div nz-row *ngIf="creditAndAttachmentList.length>0">
+        <div nz-col col-4 nzOffset="20" nzSpan="4" style="text-align: right;">
+          <button style="margin-top: 16px;margin-bottom: 16px;"  nzType="primary"
+          nz-button nz-popover nzPopoverTitle="Download" nzPopoverContent="download selected files"  >
+          <i nz-icon nzType="download" nzTheme="outline"></i>
+         </button>
+        </div>
+      </div>
+      <div *ngFor="let item of creditAndAttachmentList">
+        <nz-collapse>
+          <nz-collapse-panel [nzHeader]="'Credit'">
+            <div style="padding-top: 3.2%;">
+              <nz-table [nzData]="item.creditList" [nzFrontPagination]="false" [nzShowPagination]="false">
+                <thead>
+                  <th>Credit segment</th>
+                  <th>Credit limit</th>
+                  <th>Currency</th>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let credit of item.creditList" >
+                    <td>{{credit.creditSegment}} </td>
+                    <td>{{credit.creditLimit}} </td>
+                    <td>{{credit.CurrencyType}} </td>                   
+                  </tr>
+                </tbody>
+              </nz-table>
+            </div>
+            <nz-collapse>
+              <nz-collapse-panel [nzHeader]="'Attachment'">
+                <div *ngIf="item.creditAttachment.length>0" style="min-width: 800px; margin-left: 8px; text-align: center;">
+                  <nz-table  [nzData]="item.creditAttachment" [nzFrontPagination]="false" [nzShowPagination]="false">
+                    <thead>
+                      <th nzWidth="100px" ></th>
+                      <th nzWidth="200px;">remark</th>
+                      <th nzWidth="200px;" >updateBy</th>
+                      <th nzWidth="200px;">updateTime</th>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let attach of item.creditAttachment">
+                        <td nzShowCheckbox  (nzCheckedChange)="check(attach.dataId,$event)"></td>
+                        <td >{{attach.remark}} </td>
+                        <td >{{attach.updateBy}} </td>
+                        <td >{{attach.updateTime|date:'yyyy-MM-dd HH:mm:ss'}} </td>
+                      </tr>
+                    </tbody>
+                  </nz-table>
+                </div>
+              </nz-collapse-panel>
+            </nz-collapse>
+          </nz-collapse-panel>
+        </nz-collapse>
+      </div>
+    </nz-collapse-panel>
+  </nz-collapse>
+</div>
+

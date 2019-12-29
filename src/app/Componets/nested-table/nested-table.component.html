@@ -1,0 +1,209 @@
+<nz-table #nestedTable [nzData]="listOfParentData" [nzPageSize]="10">
+  <thead>
+    <tr>
+      <th nzShowExpand></th>
+      <th>Name</th>
+      <th>Platform</th>
+      <th>Version</th>
+      <th>Upgraded</th>
+      <th>Creator</th>
+      <th>Date</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-template ngFor let-data [ngForOf]="nestedTable.data">
+      <tr>
+        <td nzShowExpand [(nzExpand)]="data.expand"></td>
+        <td>{{ data.name }}</td>
+        <td>{{ data.platform }}</td>
+        <td>{{ data.version }}</td>
+        <td>{{ data.upgradeNum }}</td>
+        <td>{{ data.creator }}</td>
+        <td>{{ data.createdAt }}</td>
+        <td>
+          <a>Publish</a>
+        </td>
+      </tr>
+      <tr [nzExpand]="data.expand">
+        <td></td>
+        <td colspan="7">
+          <nz-table #innerTable [nzData]="listOfChildrenData" nzSize="middle" [nzShowPagination]="false">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Name</th>
+                <th>Status</th>
+                <th>Upgrade Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let data of innerTable.data">
+                <td>{{ data.date }}</td>
+                <td>{{ data.name }}</td>
+                <td>
+                  <nz-badge [nzStatus]="'success'" [nzText]="'Finished'"></nz-badge>
+                </td>
+                <td>{{ data.upgradeNum }}</td>
+                <td>
+                  <span class="table-operation">
+                    <a nz-dropdown class="operation" [nzDropdownMenu]="menu">
+                      Pause <i nz-icon nzType="down"></i>
+                    </a>
+                    <nz-dropdown-menu #menu="nzDropdownMenu">
+                      <ul nz-menu>
+                        <li nz-menu-item>
+                          <a>Action 1</a>
+                        </li>
+                        <li nz-menu-item>
+                          <a>Action 2</a>
+                        </li>
+                      </ul>
+                    </nz-dropdown-menu>
+                    <nz-divider nzType="vertical"></nz-divider>
+                    <a class="operation">Stop</a>
+                    <nz-divider nzType="vertical"></nz-divider>
+                    <a>More</a>
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </nz-table>
+        </td>
+      </tr>
+    </ng-template>
+  </tbody>
+</nz-table>
+
+
+<!-- <nz-table>
+  <thead>
+    <tr>
+      <th nzShowExpand></th>
+      <th>Credit segment</th>
+      <th>Credit limit</th>
+      <th>Currency</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td nzShowExpand [(nzExpand)]="showExpand1"></td>
+      <td>PSA Credit Segment </td>
+      <td>200</td>
+      <td>TWD</td>
+    </tr>
+    <tr [nzExpand]="showExpand1">
+      <td></td>
+      <td colspan="7">
+        <nz-table>
+          <thead>
+            <tr>
+              <th nzShowCheckbox></th>
+              <th>FileName</th>
+              <th>Remark</th>
+              <th>UpdateBy</th>
+              <th>UpdateTime</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td nzShowCheckbox></td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+            </tr>
+          </tbody>
+        </nz-table>
+      </td>
+    </tr>
+  </tbody>
+</nz-table> -->
+
+
+<nz-table #tableOut [nzData]="CreditExpandAttachmentlist" [nzShowPagination]="false">
+  <thead>
+    <tr>
+      <th nzShowExpand></th>
+      <th>Credit segment</th>
+      <th>Credit limit</th>
+      <th>Currency</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- <tr *ngFor="let item of CreditExpandAttachmentlist">   
+      <td nzShowExpand [(nzExpand)]="item.creditList.showExpand"></td>
+      <td>{{item.creditList.creditSegment}} </td>
+      <td>{{item.creditList.creditLimit}} </td>
+      <td>{{item.creditList.CurrencyType}} </td>
+    </tr>
+    <tr [nzExpand]="item.creditList.showExpand" >
+      <td></td>
+      <td colspan="7">
+        <nz-table [nzData]="item.creditAttachment">
+          <thead>
+            <th nzWidth="100px" ></th>
+            <th nzWidth="200px;">remark</th>
+            <th nzWidth="200px;" >updateBy</th>
+            <th nzWidth="200px;">updateTime</th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let attach of item.creditAttachment">
+              <td nzShowCheckbox  (nzCheckedChange)="check(attach.dataId,$event)"></td>
+              <td >{{attach.remark}} </td>
+              <td >{{attach.updateBy}} </td>
+              <td >{{attach.updateTime|date:'yyyy-MM-dd HH:mm:ss'}} </td>
+            </tr>
+          </tbody>
+        </nz-table>
+      </td>
+    </tr> -->
+    <ng-template ngFor let-data [ngForOf]="tableOut.data">
+      <tr>
+        <td nzShowExpand [(nzExpand)]="data.creditList.showExpand"></td>
+        <td>{{data.creditList.creditSegment}} </td>
+        <td>{{data.creditList.creditLimit}} </td>
+        <td>{{data.creditList.CurrencyType}} </td>
+      </tr>
+      <tr [nzExpand]="data.creditList.showExpand">
+        <td></td>
+        <td colspan="7">
+          <nz-table #tableInner [nzData]="data.creditAttachment" nzSize="middle" [nzShowPagination]="false">
+            <thead>
+              <th></th>
+              <th>remark</th>
+              <th >updateBy</th>
+              <th>updateTime</th>             
+            </thead>
+            <tbody>
+              <tr *ngFor="let attach of tableInner.data">
+                <td nzShowCheckbox  (nzCheckedChange)="check(attach.dataId,$event)"></td>
+                <td >{{attach.remark}} </td>
+                <td >{{attach.updateBy}} </td>
+                <td >{{attach.updateTime|date:'yyyy-MM-dd HH:mm:ss'}} </td>
+              </tr>
+            </tbody>
+          </nz-table>
+        </td>
+      </tr>
+    </ng-template> 
+  </tbody>
+</nz-table>
+    <!-- <ng-template ngFor let-data [ngForOf]="nestedTable.data">
+      <tr>
+        <td nzShowExpand [(nzExpand)]="data.showExpand"></td>
+        <td>{{item.creditList.creditSegment}} </td>
+        <td>{{item.creditList.creditLimit}} </td>
+        <td>{{item.creditList.CurrencyType}} </td>
+      </tr>
+      <tr [nzExpand]="data.expand">
+        <td></td>
+        <td colspan="7">
+          <nz-table #innerTable>
+
+          </nz-table>
+        </td>
+      </tr>
+    </ng-template> -->
+<!-- {{CreditExpandAttachmentlist |json}} -->

@@ -1,0 +1,89 @@
+/* :host ::ng-deep .ant-card
+{
+margin-bottom: 10px;
+
+
+} */
+::ng-deep .ant-descriptions-item-colon::after {
+    content: '';
+  }
+  .MoreAndHistory li{
+float: left;
+}
+.MoreAndHistory li:nth-child(1){
+  line-height: 32px;
+  } 
+
+ ::ng-deep .ant-table-thead > tr > th {
+   text-align: center;
+ } 
+ ::ng-deep .ant-table table {
+  text-align: center;
+ }
+@media screen and (max-width: 1600px) {
+    :host ::ng-deep .p_head {
+      margin-top: 0;
+      margin-bottom: 0.8%;
+      font-size: 30px !important;
+      font-weight: 500;
+    }
+  }
+  
+  @media screen and (max-width: 1300px) {
+    :host ::ng-deep .p_head {
+      margin-top: 0;
+      margin-bottom: 0.8%;
+      font-size: 25px !important;
+      font-weight: 500;
+    }
+  }
+  
+  @media screen and (max-width: 1200px) {
+    :host ::ng-deep .p_headi {
+      margin-top: 0;
+      margin-bottom: 0.8%;
+      font-size: 18px !important;
+      font-weight: 500;
+    }
+  }
+  
+  @media screen and (max-width: 992px) {
+    :host ::ng-deep .p_head {
+      margin-top: 0;
+      margin-bottom: 0.8%;
+      font-size: 15px !important;
+      font-weight: 500;
+    }
+  }
+  .h_float{
+float:left;
+  }
+  .color_b6b6b6{
+    /* color: #b6b6b6 */
+    color: f9f9f9;
+    font-weight: 550;
+  }
+  .color_0000AA{
+    color: #0000AA;
+    font-weight: bold;
+  }
+  .font12{
+    font-size: 12px;
+  }
+  .font14{
+    font-size: 14px;
+  }
+  ::ng-deep .ant-card-hoverable{
+    padding-bottom: 0px;
+  }
+  /* ::ng-deep tr .ant-descriptions-item .ng-star-inserted{
+    padding-bottom: 5px;
+  } */
+  ::ng-deep .ant-descriptions-row>td {
+    padding-bottom: 0px;
+    /* border-collapse:separate;
+    border-spacing:10px; */
+  }
+  ::ng-deep .ant-table-thead{
+    padding: 0px;
+  }
