@@ -5,5 +5,6 @@ export class CreditAttachment {
     remark:string;
     updateBy:string;
     updateTime:Date;
+    checkedFile:boolean;
 }
 

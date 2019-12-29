@@ -63,7 +63,8 @@ export class CollapsePanelComponent implements OnInit {
       fileId:'11F5A003-AD8C-4390-AB7B-75E119FCFE95',
       updateBy:'ceo',
       updateTime:new Date('2019-12-20 13:45:59.770'),
-      remark:'两梯两户'
+      remark:'两梯两户',
+      checkedFile:false
     },
     {
       dataId:'98FE6E7D-7929-4AE9-8B38-D73BAC79A75D',
@@ -71,7 +72,8 @@ export class CollapsePanelComponent implements OnInit {
       fileId:'EA4422AA-2525-4B4C-9A30-3453AB950402',
       updateBy:'ceo',
       updateTime:new Date('2019-12-20 13:46:24.953'),
-      remark:'三室两厅'
+      remark:'三室两厅',
+      checkedFile:false
     }
   ]
   },
@@ -91,7 +93,8 @@ export class CollapsePanelComponent implements OnInit {
         fileId:'3B2CDC70-ED63-428D-AD14-1BCA4E111697',
         updateBy:'ceo',
         updateTime:new Date('2019-12-20 13:46:43.897'),
-        remark:'买好车上瓜子'       
+        remark:'买好车上瓜子'   ,
+        checkedFile:false    
       },
       {
         dataId:'DBD794D9-9EBB-4D7D-B4D8-72B980722934',
@@ -99,7 +102,8 @@ export class CollapsePanelComponent implements OnInit {
         fileId:'BA260FE1-272B-439B-8E2C-7660375D35D2',
         updateBy:'ceo',
         updateTime:new Date('2019-12-20 13:46:59.797'),
-        remark:'三千元,新车开回家'
+        remark:'三千元,新车开回家',
+        checkedFile:false
       }
     ]
   }

@@ -171,14 +171,14 @@
         <td colspan="7">
           <nz-table #tableInner [nzData]="data.creditAttachment" nzSize="middle" [nzShowPagination]="false">
             <thead>
-              <th></th>
-              <th>remark</th>
-              <th >updateBy</th>
-              <th>updateTime</th>             
+              <th nzShowCheckbox [(nzChecked)]="data.creditList.CheckedAll" (nzCheckedChange)="checkAll(data.creditAttachment,$event)" nzAlign="center" nzWidth="50px"></th>
+              <th nzAlign="center" nzWidth="50px">remark</th>
+              <th nzAlign="center" nzWidth="50px">updateBy</th>
+              <th nzAlign="center" nzWidth="50px">updateTime</th>         
             </thead>
             <tbody>
               <tr *ngFor="let attach of tableInner.data">
-                <td nzShowCheckbox  (nzCheckedChange)="check(attach.dataId,$event)"></td>
+                <td nzShowCheckbox [(nzChecked)] ="attach.checkedFile" (nzCheckedChange)="checkSingle(attach,$event)"></td>
                 <td >{{attach.remark}} </td>
                 <td >{{attach.updateBy}} </td>
                 <td >{{attach.updateTime|date:'yyyy-MM-dd HH:mm:ss'}} </td>

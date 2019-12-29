@@ -23,7 +23,8 @@ export class CreditExpand {
     creditSegment:string;
     creditLimit:number;
     CurrencyType:string;
-    showExpand:boolean;
+    ShowExpand:boolean;
+    CheckedAll:boolean;
 }
 export class CreditExpandAttachment{
     creditList:CreditExpand;
