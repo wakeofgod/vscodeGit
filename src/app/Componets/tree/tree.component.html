@@ -1,0 +1,27 @@
+<div nz-row style="width: 1000px;">
+  <div nz-col nzSpan="12">
+    <span>受控操作实列</span>
+    <nz-tree
+    [nzData]="nodes"
+    nzCheckable
+    nzMultiple
+    [nzCheckedKeys]="defaultCheckedKeys"
+    [nzExpandedKeys]="defaultExpandedKeys"
+    [nzSelectedKeys]="defaultSelectedKeys"
+    (nzClick)="nzEvent($event)"
+    (nzExpandChange)="nzEvent($event)"
+    (nzCheckBoxChange)="nzEvent($event)">
+
+    </nz-tree>
+  </div>
+  <div nz-col nzSpan="12">
+    <span>可拖动节点</span>
+    <nz-tree
+    [nzData]="dropNodes"
+    nzDraggable nzBlockNode
+    (nzOnDrop)="nzDropEvent($event)">
+
+    </nz-tree
+    >
+  </div>
+</div>

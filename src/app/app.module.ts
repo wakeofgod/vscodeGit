@@ -14,6 +14,7 @@ import { MyFileUploadComponent } from './Componets/my-file-upload/my-file-upload
 import { CollapsePanelComponent } from './Componets/collapse-panel/collapse-panel.component';
 import { AccountCardComponent } from './Componets/account-card/account-card.component';
 import {NestedTableComponent} from './Componets/nested-table/nested-table.component';
+import {TreeComponent} from './Componets/tree/tree.component';
 
 registerLocaleData(zh);
 
@@ -23,7 +24,8 @@ registerLocaleData(zh);
       MyFileUploadComponent,
       CollapsePanelComponent,
       AccountCardComponent,
-      NestedTableComponent
+      NestedTableComponent,
+      TreeComponent,
    ],
    imports: [
       BrowserModule,
