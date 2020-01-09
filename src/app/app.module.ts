@@ -16,6 +16,7 @@ import { AccountCardComponent } from './Components/account-card/account-card.com
 import {NestedTableComponent} from './Components/nested-table/nested-table.component';
 import {TreeComponent} from './Components/tree/tree.component';
 import { BreadcrumbComponent } from './Components/breadcrumb/breadcrumb.component';
+import { AutocompleteComponent } from './components/autocomplete/autocomplete.component';
 
 registerLocaleData(zh);
 
@@ -28,6 +29,7 @@ registerLocaleData(zh);
       NestedTableComponent,
       TreeComponent,
       BreadcrumbComponent,
+      AutocompleteComponent,
    ],
    imports: [
       BrowserModule,

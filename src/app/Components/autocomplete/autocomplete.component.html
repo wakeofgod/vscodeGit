@@ -1,0 +1,91 @@
+<div nz-row style="min-width: 1000px;">
+    <div nz-col nzSpan="12" style="margin-top: 10px;">
+        <input nz-input [(ngModel)]="value" [nzAutocomplete]="auto">
+        <nz-autocomplete [nzDataSource]="['12345', '23456', '34567']" #auto></nz-autocomplete>
+    </div>
+    <div nz-col nzSpan="12" style="margin-top: 10px;">
+        <input nz-input [(ngModel)]="value" [nzAutocomplete]="auto1">
+        <nz-autocomplete #auto1>
+          <nz-auto-option [nzValue]="'11111'">11111</nz-auto-option>
+          <nz-auto-option [nzValue]="'22222'">22222</nz-auto-option>
+          <nz-auto-option [nzValue]="'33333'">33333</nz-auto-option>
+        </nz-autocomplete>       
+    </div>
+    <div nz-col nzSpan="12" style="margin-top: 10px;">
+        <div class="example-input">
+            <input
+            placeholder="input here"
+            nz-input
+            [(ngModel)]="inputValue"
+            (input)="onInput($event.target?.value)"
+            (keyup)="addOption($event)"
+            [nzAutocomplete]="autoOption">
+            <!--nz-auto-option替换nzDataSource -->
+            <nz-autocomplete nzBackfill #autoOption>
+                <nz-auto-option *ngFor="let option of showOptions" [nzValue]="option">
+                    {{option}}
+                </nz-auto-option>
+            </nz-autocomplete>
+        </div>
+    </div>
+    <!--查询模式，确定类目-->
+    <div nz-col nzSpan="12" style="margin-top: 10px;">
+        <div class="example-input">
+            <!--nzSuffix这个特性查不到-->
+            <nz-input-group nzSize="large" [nzSuffix]="suffixIcon">
+                <input
+                placeholder="input here"
+                nz-input
+                [(ngModel)]="inputCategory" ngModelChange="onChange($event)" [nzAutocomplete]="autoCategory">
+            </nz-input-group>
+            <ng-template #suffixIcon>
+                <i nz-icon nzType="search"></i>
+            </ng-template>
+            <nz-autocomplete #autoCategory>
+                <nz-auto-optgroup *ngFor="let group of optionGroups" [nzLabel]="groupTitle">
+                    <ng-template #groupTitle>
+                        <span>{{group.title}} </span>
+                        <a class="more-link"  href="https://www.google.com/search?q=ng+zorro" target="_blank">更多</a>
+                    </ng-template>
+                    <nz-auto-option *ngFor="let option of group.children" [nzLabel]="option.title" [nzValue]="option.title">
+                        {{option.title}}
+                        <span class="certain-search-item-count">{{ option.count }} 人 关注</span>
+                    </nz-auto-option>
+                </nz-auto-optgroup>
+            </nz-autocomplete>
+        </div>
+    </div>
+    <!--不确定类目-->
+    <div nz-col nzSpan="12" style="margin-top: 10px;">
+        <div class="example-input">
+            <nz-input-group nzSearch nzSize="large" [nzAddOnAfter]="suffixIconButton">
+              <input
+                placeholder="input here"
+                nz-input
+                [(ngModel)]="inputNoCategory"
+                (input)="onChange($event)"
+                [nzAutocomplete]="autoNoCategory"
+              />
+            </nz-input-group>
+            <ng-template #suffixIconButton>
+              <button nz-button nzType="primary" nzSize="large" nzSearch>
+                <i nz-icon nzType="search" nzTheme="outline"></i>
+              </button>
+            </ng-template>
+            <nz-autocomplete #autoNoCategory>
+              <nz-auto-option class="global-search-item" *ngFor="let option of optionNoCategory" [nzValue]="option.category">
+                Found {{ option.value }} on
+                <a
+                  class="global-search-item-desc"
+                  [href]="'https://s.taobao.com/search?q=' + option.value"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {{ option.category }}
+                </a>
+                <span class="global-search-item-count">{{ option.count }} results</span>
+              </nz-auto-option>
+            </nz-autocomplete>
+          </div>
+    </div>
+</div>
