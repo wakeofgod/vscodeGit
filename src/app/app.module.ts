@@ -15,6 +15,7 @@ import { CollapsePanelComponent } from './Components/collapse-panel/collapse-pan
 import { AccountCardComponent } from './Components/account-card/account-card.component';
 import {NestedTableComponent} from './Components/nested-table/nested-table.component';
 import {TreeComponent} from './Components/tree/tree.component';
+import { BreadcrumbComponent } from './Components/breadcrumb/breadcrumb.component';
 
 registerLocaleData(zh);
 
@@ -26,6 +27,7 @@ registerLocaleData(zh);
       AccountCardComponent,
       NestedTableComponent,
       TreeComponent,
+      BreadcrumbComponent,
    ],
    imports: [
       BrowserModule,

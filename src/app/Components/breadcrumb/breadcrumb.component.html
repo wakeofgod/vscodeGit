@@ -1,0 +1,84 @@
+<div nz-row style="min-width: 1000px;">
+    <div nz-col nzSpan="12">
+        <nz-breadcrumb>
+            <nz-breadcrumb-item>
+                Home
+            </nz-breadcrumb-item>
+            <nz-breadcrumb-item>
+                <a>Appplication List</a>
+            </nz-breadcrumb-item>
+            <nz-breadcrumb-item>
+                <a>An application</a>
+            </nz-breadcrumb-item>
+        </nz-breadcrumb>
+    </div>
+    <!--带图标-->
+    <div nz-col nzSpan="12">
+        <nz-breadcrumb>
+            <nz-breadcrumb-item>
+              <i nz-icon nzType="home"></i>
+              <span>Home</span>
+            </nz-breadcrumb-item>
+            <nz-breadcrumb-item>
+              <a><i nz-icon nzType="user"></i><span>Application List</span></a>
+            </nz-breadcrumb-item>
+            <nz-breadcrumb-item>
+              Application
+            </nz-breadcrumb-item>
+          </nz-breadcrumb>
+    </div>
+    <!--使用 nzSeparator 可以自定义分隔符-->
+    <div nz-col nzSpan="12">
+        <h4>String</h4>
+        <nz-breadcrumb nzSeparator=">">
+          <nz-breadcrumb-item>
+            Home
+          </nz-breadcrumb-item>
+          <nz-breadcrumb-item>
+            <a>Application List</a>
+          </nz-breadcrumb-item>
+          <nz-breadcrumb-item>
+            An Application
+          </nz-breadcrumb-item>
+        </nz-breadcrumb>
+        <br />
+        <h4>TemplateRef</h4>
+        <nz-breadcrumb [nzSeparator]="iconTemplate">
+          <nz-breadcrumb-item>
+            Home
+          </nz-breadcrumb-item>
+          <nz-breadcrumb-item>
+            <a>Application List</a>
+          </nz-breadcrumb-item>
+          <nz-breadcrumb-item>
+            An Application
+          </nz-breadcrumb-item>
+        </nz-breadcrumb>
+        <ng-template #iconTemplate><i nz-icon nzType="arrow-right"></i></ng-template>
+    </div>
+    <!--带下拉菜单-->
+    <div nz-col nzSpan="12">
+        <nz-breadcrumb>
+            <nz-breadcrumb-item>
+                Ant Design
+            </nz-breadcrumb-item>
+            <nz-breadcrumb-item>
+                <a>Component</a>
+            </nz-breadcrumb-item>
+            <!--这里的nzOverlay是什么？？-->
+            <nz-breadcrumb-item [nzOverlay]="menu">
+                <a href="javascript:;">An Application</a>
+            </nz-breadcrumb-item>
+            <nz-breadcrumb-item>
+                Button
+            </nz-breadcrumb-item>
+        </nz-breadcrumb>
+        <nz-dropdown-menu #menu="nzDropdownMenu">
+            <ul nz-menu nzSelectable>
+                <li nz-menu-item>General</li>
+                <li nz-menu-item>Layout</li>
+                <li nz-menu-item>Navigation</li>
+            </ul>
+        </nz-dropdown-menu>
+    </div>
+</div>
