@@ -10,11 +10,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh';
-import { MyFileUploadComponent } from './Componets/my-file-upload/my-file-upload.component';
-import { CollapsePanelComponent } from './Componets/collapse-panel/collapse-panel.component';
-import { AccountCardComponent } from './Componets/account-card/account-card.component';
-import {NestedTableComponent} from './Componets/nested-table/nested-table.component';
-import {TreeComponent} from './Componets/tree/tree.component';
+import { MyFileUploadComponent } from './Components/my-file-upload/my-file-upload.component';
+import { CollapsePanelComponent } from './Components/collapse-panel/collapse-panel.component';
+import { AccountCardComponent } from './Components/account-card/account-card.component';
+import {NestedTableComponent} from './Components/nested-table/nested-table.component';
+import {TreeComponent} from './Components/tree/tree.component';
 
 registerLocaleData(zh);
 
