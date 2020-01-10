@@ -1,7 +1,7 @@
 // tslint:disable:no-any
 import { Component, OnInit } from '@angular/core';
 
-//#region 
+//#region 初始数据，使用children
 const options = [
   {
     value:'zhejiang',
@@ -81,6 +81,51 @@ const otherOptions = [
 ];
 
 //#endregion
+//#region 尝试修改数据结构，不使用children
+//  const options=[
+//    {
+//      value:'zhejiang',
+//      label:'zhejiang',
+//      city:[
+//        {
+//         value:'hangzhou',
+//         label:'hangzhou',
+//         region:[
+//           {
+//             value: 'xihu',
+//             label: 'West Lake',
+//             isLeaf: true          
+//           }
+//         ]
+//        },
+//        {
+//          value:'ningbo',
+//          label:'ningbo',
+//          isLeaf:true,
+//        }
+//      ]
+//    }
+//  ];
+//  const otherOptions=[
+//   {
+//     value:'jiangsu',
+//     label:'jiangsu',
+//     city:[
+//       {
+//        value:'nanjing',
+//        label:'nanjing',
+//        region:[
+//          {
+//            value: 'zhonghuamen',
+//            label: 'zhonghuamen',
+//            isLeaf: true          
+//          }
+//        ]
+//       }
+//     ]
+//   } 
+//  ];
+//#endregion
 @Component({
   selector: 'app-cascader',
   templateUrl: './cascader.component.html',
@@ -100,7 +145,6 @@ export class CascaderComponent implements OnInit {
     this.nzOptions=options;
   }
   changeNzOptions(): void {
-    debugger;
     if (this.nzOptions === options) {
       this.nzOptions = otherOptions;
     } else {
