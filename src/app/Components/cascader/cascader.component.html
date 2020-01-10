@@ -1,0 +1,13 @@
+<div nz-row style="min-width: 1000px;">
+    <div nz-col nzSpan="12" style="margin-top: 10px;">
+        <nz-cascader [nzOptions]="nzOptions" [(ngModel)]="values" (ngModelChange)="onChanges($event)">
+
+        </nz-cascader>
+        &nbsp;
+        <a href="javascript:;" (click)="changeNzOptions()" class="change-options">
+            Change Options
+        </a>
+    </div>
+    <!--在这里打印数据会崩掉，原因未知，待解决-->
+    <!-- {{nzOptions|json}} -->
+</div>

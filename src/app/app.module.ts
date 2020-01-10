@@ -17,6 +17,7 @@ import {NestedTableComponent} from './Components/nested-table/nested-table.compo
 import {TreeComponent} from './Components/tree/tree.component';
 import { BreadcrumbComponent } from './Components/breadcrumb/breadcrumb.component';
 import { AutocompleteComponent } from './components/autocomplete/autocomplete.component';
+import { CascaderComponent } from './components/cascader/cascader.component';
 
 registerLocaleData(zh);
 
@@ -30,6 +31,7 @@ registerLocaleData(zh);
       TreeComponent,
       BreadcrumbComponent,
       AutocompleteComponent,
+      CascaderComponent,
    ],
    imports: [
       BrowserModule,
