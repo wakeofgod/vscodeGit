@@ -1,5 +1,6 @@
 // tslint:disable:no-any
 import { Component, OnInit } from '@angular/core';
+import { NzCascaderOption } from 'ng-zorro-antd';
 
 //#region 初始数据，使用children
 const options = [
@@ -144,6 +145,7 @@ export class CascaderComponent implements OnInit {
     // }, 100);
     this.nzOptions=options;
   }
+  //#region  基本省市级连
   changeNzOptions(): void {
     if (this.nzOptions === options) {
       this.nzOptions = otherOptions;
@@ -154,4 +156,24 @@ export class CascaderComponent implements OnInit {
   onChanges(values: any): void {
     console.log(values, this.values);
   }
+  //#endregion
+  //#region  
+  arrayOptions:NzCascaderOption=options;
+  onArrayChanges(values: string[]): void {
+    console.log(values, this.values);
+  }
+  //#endregion
+  //#region 自定义
+  defineOptions:NzCascaderOption=options;
+  defineValues: string[] | null = null;
+  text = 'Unselect';
+
+  onDefineChanges(values: string[]): void {
+    console.log(values, this.values);
+  }
+
+  onDefineSelectChanges(selectedOptions: NzCascaderOption[]): void {
+    this.text = selectedOptions.map(o => o.label).join(', ');
+  }
+  //#endregion
 }

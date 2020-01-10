@@ -11,6 +11,16 @@
     <!--在这里打印数据会崩掉，原因未知，待解决-->
     <!-- {{nzOptions|json}} -->
     <div nz-col nzSpan="12" style="margin-top: 10px;">
+        <nz-cascader [nzOptions]="arrayOptions" [(ngModel)]="arrayValues" (ngModelChange)="onArrayChanges($event)">
 
+        </nz-cascader>
+    </div>
+    <!--自定义显示-->
+    <div nz-col nzSpan="12" style="margin-top: 10px;">
+        {{text}}
+        <nz-cascader
+        [nzShowInput]="false" [nzOptions]="defineOptions" [(ngModel)]="defineValues" (ngModelChange)="onDefineChanges($event)" (nzSelectionChange)="onDefineSelectChanges($event)">
+        <a href="javascript: void(0)">Change city</a>
+        </nz-cascader>
     </div>
 </div>
