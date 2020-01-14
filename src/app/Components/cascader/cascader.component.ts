@@ -137,6 +137,8 @@ export class CascaderComponent implements OnInit {
   nzOptions:any[]|null=null;
   values:any[]|null=null;
   constructor() { }
+  // public IsCreditSendToSapDisabled:boolean=true;
+  // public creditSendToSap:boolean=undefined;
 
   ngOnInit() {
     //这里写定时器是为什么?
@@ -144,6 +146,11 @@ export class CascaderComponent implements OnInit {
     //   this.nzOptions = options;
     // }, 100);
     this.nzOptions=options;
+    //#region 
+    // console.log(this.IsCreditSendToSapDisabled);
+    // console.log(this.creditSendToSap);
+    // console.log(this.IsCreditSendToSapDisabled&&!this.creditSendToSap);
+    //#endregion
   }
   //#region  基本省市级连
   changeNzOptions(): void {
