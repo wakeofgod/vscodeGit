@@ -183,4 +183,12 @@ export class CascaderComponent implements OnInit {
     this.text = selectedOptions.map(o => o.label).join(', ');
   }
   //#endregion
+  //#region 
+  public isShowTestDiv:boolean=this.checkDoSomething(true,1);
+  checkDoSomething(aaa:boolean,num:number){
+    debugger;
+    console.log(`${aaa} ${num}`);
+    return true;
+  }
+  //#endregion
 }
