@@ -1,6 +1,7 @@
 // tslint:disable:no-any
 import { Component, OnInit } from '@angular/core';
 import { NzCascaderOption } from 'ng-zorro-antd';
+import { isNullOrUndefined } from 'util';
 
 //#region 初始数据，使用children
 const options = [
@@ -151,6 +152,14 @@ export class CascaderComponent implements OnInit {
     // console.log(this.creditSendToSap);
     // console.log(this.IsCreditSendToSapDisabled&&!this.creditSendToSap);
     //#endregion
+    console.log(`testBool: ${this.testBool}`);
+    console.log(`testBool: ${!this.testBool}`);
+    console.log(`testBool: ${true}`);
+    console.log(`testBool: ${false}`);
+    console.log(`testBool: ${isNullOrUndefined(this.testBool)}`);
+    console.log(`testBool: ${!isNullOrUndefined(this.testBool)}`);
+    console.log(`testBool: ${null}`);
+    console.log(`testBool: ${!null}`);
   }
   //#region  基本省市级连
   changeNzOptions(): void {
@@ -186,9 +195,9 @@ export class CascaderComponent implements OnInit {
   //#region 
   public isShowTestDiv:boolean=this.checkDoSomething(true,1);
   checkDoSomething(aaa:boolean,num:number){
-    debugger;
     console.log(`${aaa} ${num}`);
     return true;
   }
+  public testBool:boolean;
   //#endregion
 }
